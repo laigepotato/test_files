@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GDT Pixel Demo</title>
+
+    <!-- 下面这一段 GDT Pixel Base Code 括起来的代码是对外提供的接入代码，开发者只能替换其中的pixel_id，其他都不允许修改 -->
+    <!-- GDT Pixel Base Code -->
+    <script>
+      !function(g,d,t,e,v,n,s){if(g.gdt)return;v=g.gdt=function(){v.tk?
+        v.tk.apply(v,arguments):v.queue.push(arguments)};v.sv='1.0';v.bt=0;v.queue=[];
+        n=d.createElement(t);n.async=!0;n.src=e;s=d.getElementsByTagName(t)[0];
+        s.parentNode.insertBefore(n,s);}(window,document,'script',
+//        './release/gdtevent.min.js');
+        './build/gdtevent.js');
+//        '//qzonestyle.gtimg.cn/qzone/biz/gdt/dmp/user-action/gdtevent.min.js');
+
+      gdt('init','1105929547');
+      gdt('track','PAGE_VIEW');
+    </script>
+
+    <!-- NoScript -->
+    <noscript>
+        <img height="1" width="1" style="display:none" src="http://a.gdt.qq.com/pixel?user_action_set_id=1105929547&action_type=PAGE_VIEW&noscript=1"/>
+    </noscript>
+    <!-- DO NOT MODIFY -->
+    <!-- End GDT Pixel Base Code -->
+
+</head>
+<body>
+
+<!-- 9类标准事件上报代码：gdt('track', actionType, actionParam)，actionParam为key/value对结构，key只能由字母数字和下划线组成，value不允许嵌套，必须为字符串、数字或者布尔类型或者这几个类型的数组 -->
+<script>
+//    gdt('track', 'SEARCH'); // 搜索
+//    gdt('track', 'VIEW_CONTENT'); // 浏览
+//    gdt('track', 'REGISTER'); // 注册
+//    gdt('track', 'ADD_TO_WISHLIST'); // 收藏
+//    gdt('track', 'CONSULT'); // 咨询
+//    gdt('track', 'ADD_TO_CART'); // 加入购物车
+//    gdt('track', 'INITIATE_CHECKOUT'); // 开始结算
+//    gdt('track', 'COMPLETE_ORDER'); // 下单
+//    gdt('track', 'PURCHASE', {'price': 100}); // 付费
+    gdt('track', 'RESERVATION', {'time': '2017-09-01'}); // 预订
+    gdt('track', 'SHARE', {'title': '广点通分享', 'outer_action_id': 666}); // 分享
+</script>
+
+<!-- 自定义事件上报代码：gdt('track_custom', actionType, actionParam)，actionParam格式要求和标准事件一样 -->
+<script>
+    gdt('track_custom', 'TEST',{'key1': 'value1', 'key2': 'value2'});
+</script>
+</body>
+</html>
